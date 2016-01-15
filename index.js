@@ -3,6 +3,7 @@ var connect = require('connect'),
     modRewrite = require('connect-modrewrite'),
     yargs = require('yargs'),
     chalk = require('chalk'),
+    pkg = require('./package.json'),
     config = require('./config');
 
 var argv = yargs
@@ -34,6 +35,9 @@ var argv = yargs
     }
   })
   .help('help')
+  .version(function () {
+    return pkg.version;
+  })
   .default({
     'host': config.host,
     'port': config.port,
