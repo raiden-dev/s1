@@ -73,7 +73,7 @@ app.use(modRewrite(rewriteRules));
 app.use(serveStatic(argv.root));
 
 app.listen(argv.port, argv.host, function (err) {
-  console.log('S1', (!err ?  chalk.green('started') : chalk.red('failed')));
+  console.log('s1', (!err ?  chalk.green('started') : chalk.red('failed')));
 
   if (!err) {
     console.log('Address: ' + argv.host + ':' + argv.port);
