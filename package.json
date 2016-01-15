@@ -1,0 +1,33 @@
+{
+  "name": "s1",
+  "version": "0.1.0",
+  "description": "Static server for SPA development",
+  "license": "MIT",
+  "author": "Andrey Kravstov <raidendev@gmail.com>",
+  "homepage": "https://github.com/rd5/s1",
+  "keywords": [
+    "server",
+    "static",
+    "spa"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:rd5/s1.git"
+  },
+  "bugs": "https://github.com/rd5/s1/issues",
+  "main": "index.js",
+  "bin": {
+    "s1": "bin/s1"
+  },
+  "scripts": {
+    "start": "node bin/s1",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "chalk": "^1.1.1",
+    "connect": "^3.4.0",
+    "connect-modrewrite": "^0.8.2",
+    "serve-static": "^1.10.0",
+    "yargs": "^3.31.0"
+  }
+}
