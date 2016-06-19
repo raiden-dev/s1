@@ -16,7 +16,7 @@ var argv = yargs
 
     'p': {
       alias: 'port',
-      describe: 'Port'
+      describe: 'Port number'
     },
 
     'd': {
@@ -32,6 +32,11 @@ var argv = yargs
     'c': {
       alias: ['config', 'conf'],
       describe: 'Config module'
+    },
+
+    'v': {
+      alias: 'verbose',
+      describe: 'Verbose logging'
     }
   })
   .help('help')
@@ -43,7 +48,8 @@ var argv = yargs
     'port': config.port,
     'root': config.dir,
     'index': config.index,
-    'config': './config'
+    'config': './config',
+    'verbose': config.verbose
   })
   .argv;
 
@@ -69,16 +75,29 @@ rewriteRules.forEach(function (rule, i) {
 
 var app = connect();
 
+app.use(function (req, res, next) {
+  if (argv.verbose) {
+    console.log('');
+    console.log('URL:', req.url);
+    console.log('Headers:', req.headers);
+  }
+  next();
+});
+
 app.use(modRewrite(rewriteRules));
 app.use(serveStatic(argv.root));
 
 app.listen(argv.port, argv.host, function (err) {
   console.log('s1', (!err ?  chalk.green('started') : chalk.red('failed')));
+  console.log('');
 
   if (!err) {
-    console.log('Address: ' + argv.host + ':' + argv.port);
-    console.log('Root: ' + argv.root);
-    console.log('Index: ' + argv.index);
+    console.log('Server address: ' + argv.host + ':' + argv.port);
+    console.log('Root directory: ' + argv.root);
+    console.log('Index file: ' + argv.index);
+    if (argv.verbose) {
+      console.log('Verbose logging');
+    }
   }
   else {
     console.error(err.stack);

@@ -5,5 +5,6 @@ module.exports = {
   index: 'index.html',
   rewrite: [
     '^(?:(?!.js|.css|.html|.png|.svg|.jpg|.gif|.woff|.ttf|.eot).)+$ /{{index}}'
-  ]
+  ],
+  verbose: false
 };
