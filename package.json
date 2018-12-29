@@ -4,7 +4,7 @@
   "description": "Static server for SPA development",
   "license": "MIT",
   "author": "Andrey Kravstov <raidendev@gmail.com>",
-  "homepage": "https://github.com/rd5/s1",
+  "homepage": "https://github.com/raiden-dev/s1",
   "keywords": [
     "server",
     "static",
@@ -13,9 +13,9 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git@github.com:rd5/s1.git"
+    "url": "git@github.com:raiden-dev/s1.git"
   },
-  "bugs": "https://github.com/rd5/s1/issues",
+  "bugs": "https://github.com/raiden-dev/s1/issues",
   "preferGlobal": true,
   "main": "index.js",
   "bin": {
