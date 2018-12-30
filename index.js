@@ -82,8 +82,7 @@ var app = connect();
 
 app.use(function (req, res, next) {
   if (config.verbose) {
-    console.log('');
-    console.log('URL:', req.url);
+    console.log('\nURL:', req.url);
     console.log('Headers:', req.headers);
   }
   next();
@@ -93,8 +92,7 @@ app.use(modRewrite(rewriteRules));
 app.use(serveStatic(config.dir));
 
 app.listen(config.port, config.host, function (err) {
-  console.log('s1', (!err ?  chalk.green('started') : chalk.red('failed')));
-  console.log('');
+  console.log('s1', (!err ?  chalk.green('started') : chalk.red('failed')), '\n');
 
   if (!err) {
     if (configPath) {
