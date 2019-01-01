@@ -4,7 +4,7 @@ module.exports = {
   dir: '.',
   index: 'index.html',
   rewrite: [
-    '^(?:(?!.js|.css|.html|.png|.svg|.jpg|.gif|.woff|.ttf|.eot).)+$ /{{index}}'
+    '^(?:(?!.js|.css|.html|.png|.svg|.jpg|.gif|.webp|.webm|.woff|.ttf|.eot).)+$ /{{index}}'
   ],
   verbose: false
 };
