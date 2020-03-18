@@ -1,7 +1,7 @@
 # s1 – Static server for SPA development
 
 The light and simple node-way static server with mod_rewrite.
-Best suitable for single-page apps development but can be used to host anyting static.
+Best suitable for single-page apps development but can be used to host anything static.
 
 *Please, avoid using it in production.*
 
@@ -42,9 +42,9 @@ Options:
 ## Config
 
 The config is the basic Node.js module exporting object.
-It is located at s1's root directory, e.g. if installed globally in OS X `/usr/local/lib/node_modules/s1/config.js`.
+It is located at s1's root directory, e.g., if installed globally in OS X `/usr/local/lib/node_modules/s1/config.js`.
 
-You can have as many configs as you want, store it where you want and pass needed one to the s1 using `-c` or `--config` cli switch.
+You can have as many configs as you want, store it where you want, and pass needed one to the s1 using `-c` or `--config` cli switch.
 
 For example:
 
