@@ -30,6 +30,6 @@
     "connect": "^3.6.6",
     "connect-modrewrite": "^0.10.2",
     "serve-static": "^1.13.2",
-    "yargs": "^4.8.1"
+    "yargs": "^17.7.2"
   }
 }
