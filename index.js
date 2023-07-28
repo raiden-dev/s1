@@ -3,11 +3,13 @@ var path = require('path'),
     serveStatic = require('serve-static'),
     modRewrite = require('connect-modrewrite'),
     yargs = require('yargs'),
+    yargs = require('yargs/yargs'),
+    { hideBin } = require('yargs/helpers'),
     chalk = require('chalk'),
     pkg = require('./package.json'),
     defaultConfig = require('./config');
 
-var argv = yargs
+var argv = yargs(hideBin(process.argv))
   .usage('Usage: $0 [options]')
   .options({
     'h': {
@@ -47,10 +49,8 @@ var argv = yargs
     }
   })
   .help('help')
-  .version(function () {
-    return pkg.version;
-  })
-  .argv;
+  .version()
+  .parse();
 
 var config = null,
     configPath = '';
